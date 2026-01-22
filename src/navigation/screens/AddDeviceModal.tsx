@@ -162,29 +162,6 @@ export const AddDeviceModal = () => {
                   swatches={true}
                   swatchesLast={true}
                 />
-                
-                {/* Przyciski do szybkiego wyboru popularnych kolorów */}
-                <View style={styles.quickColorsContainer}>
-                  <Text style={styles.quickColorsLabel}>Quick colors:</Text>
-                  <View style={styles.quickColorsGrid}>
-                    {['#FF6B6B', '#4ECDC4', '#FFD166', '#06D6A0', '#118AB2', '#EF476F', '#7209B7', '#F3722C'].map((color) => (
-                      <TouchableOpacity
-                        key={color}
-                        style={[styles.quickColor, { backgroundColor: color }]}
-                        onPress={() => {
-                          setSelectedColor(color);
-                          if (colorPickerRef.current) {
-                            colorPickerRef.current._onColorChange(color);
-                          }
-                        }}
-                      >
-                        {selectedColor === color && (
-                          <Ionicons name="checkmark" size={16} color="#FFF" />
-                        )}
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
               </View>
             )}
           </View>
